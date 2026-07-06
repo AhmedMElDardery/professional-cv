@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed M. ElDardery - Professional CV</title>
+    <meta name="description" content="Professional CV of Ahmed M. ElDardery.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Ahmed M. ElDardery<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="#about" data-en="About" data-ar="نبذة عني">About</a></li>
+                <li><a href="#experience" data-en="Experience" data-ar="الخبرات">Experience</a></li>
+                <li><a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a></li>
+                <li><a href="#education" data-en="Education" data-ar="التعليم">Education</a></li>
+                <li><a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+                <button id="lang-toggle" class="btn-secondary btn-lang">عربي</button>
+                <a href="#contact" class="btn-primary btn-nav" data-en="Let's Talk" data-ar="تواصل معي">Let's Talk</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-section">
+        <!-- Canvas for particle background -->
+        <canvas id="particle-canvas"></canvas>
+        
+        <div class="hero-layout">
+            <div class="hero-content fade-in">
+                <p class="greeting" data-en="Hello, I'm" data-ar="أهلاً بك، أنا">Hello, I'm</p>
+                <h1 class="glitch-text" data-text="Ahmed M. ElDardery">Ahmed M. ElDardery</h1>
+                <h2 class="role" data-en="Mobile Application Developer" data-ar="مطور تطبيقات هواتف">Mobile Application Developer</h2>
+                <p class="bio-short" data-en="I build exceptional digital experiences that are fast, accessible, and visually stunning." data-ar="أقوم ببناء تجارب رقمية استثنائية، سريعة، وسهلة الاستخدام وذات تصميم مذهل.">I build exceptional digital experiences that are fast, accessible, and visually stunning.</p>
+                <div class="hero-actions">
+                    <a href="#experience" class="btn-primary" data-en="View My Work" data-ar="شاهد أعمالي">View My Work</a>
+                    <button onclick="window.print()" class="btn-secondary print-btn" data-en="Download CV" data-ar="تحميل السيرة الذاتية">Download CV</button>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image fade-in-up">
+                <div class="profile-orbit-wrapper">
+                    <div class="orbit-ring-1"></div>
+                    <div class="orbit-ring-2"></div>
+                    <div class="orbit-ring-3"></div>
+                    <div class="profile-img-container">
+                        <img src="assets/images/profile.jpg" alt="Ahmed M. ElDardery" onerror="this.src='https://via.placeholder.com/400x500?text=Your+Photo+Here'">
+                    </div>
+                    <div class="floating-badge badge-1" aria-label="React Native"><i class="fab fa-react"></i></div>
+                    <div class="floating-badge badge-2" aria-label="Apple/iOS"><i class="fab fa-apple"></i></div>
+                    <div class="floating-badge badge-3" aria-label="Android"><i class="fab fa-android"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="section-container fade-in-up">
+            <h2 class="section-title" data-en="About <span>Me</span>" data-ar="نبذة <span>عني</span>">About <span>Me</span></h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p data-en="I am a passionate professional with a strong background in technology and a keen eye for design. Over the years, I have honed my skills in creating scalable architectures and intuitive user interfaces." data-ar="أنا محترف شغوف ولدي خلفية قوية في التكنولوجيا ونظرة ثاقبة للتصميم. على مر السنين، طورت مهاراتي في إنشاء بنيات قابلة للتطوير وواجهات مستخدم بديهية.">I am a passionate professional with a strong background in technology and a keen eye for design. Over the years, I have honed my skills in creating scalable architectures and intuitive user interfaces.</p>
+                    <p data-en="My approach combines analytical thinking with creative problem-solving, ensuring that every project I touch not only functions flawlessly but also delivers a memorable user experience." data-ar="يجمع نهجي بين التفكير التحليلي وحل المشكلات الإبداعي، مما يضمن أن كل مشروع أعمل عليه لا يعمل بشكل لا تشوبه شائبة فحسب، بل يقدم أيضًا تجربة مستخدم لا تُنسى.">My approach combines analytical thinking with creative problem-solving, ensuring that every project I touch not only functions flawlessly but also delivers a memorable user experience.</p>
+                </div>
+                <div class="about-stats glass-card">
+                    <div class="stat-item">
+                        <h3 class="counter">5+</h3>
+                        <p data-en="Years Experience" data-ar="سنوات خبرة">Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="counter">30+</h3>
+                        <p data-en="Projects Completed" data-ar="مشروع منجز">Projects Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="counter">100%</h3>
+                        <p data-en="Client Satisfaction" data-ar="رضا العملاء">Client Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section alt-bg">
+        <div class="section-container fade-in-up">
+            <h2 class="section-title" data-en="Professional <span>Experience</span>" data-ar="الخبرات <span>العملية</span>">Professional <span>Experience</span></h2>
+            <div class="timeline">
+                
+                <div class="timeline-item glass-card">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 data-en="Senior Software Engineer" data-ar="مهندس برمجيات أول">Senior Software Engineer</h3>
+                            <span class="timeline-date" data-en="2021 - Present" data-ar="2021 - الحاضر">2021 - Present</span>
+                        </div>
+                        <h4 class="company" data-en="Tech Innovations Inc." data-ar="شركة الابتكارات التقنية">Tech Innovations Inc.</h4>
+                        <p data-en="Led a team of developers to architect and build a scalable SaaS platform serving over 1M users. Implemented modern microservices architecture and improved system performance by 40%." data-ar="قدت فريقاً من المطورين لتصميم وبناء منصة برمجيات (SaaS) قابلة للتطوير تخدم أكثر من مليون مستخدم. قمت بتطبيق بنية الخدمات المصغرة الحديثة وتحسين أداء النظام بنسبة 40%.">Led a team of developers to architect and build a scalable SaaS platform serving over 1M users. Implemented modern microservices architecture and improved system performance by 40%.</p>
+                        <div class="tech-stack">
+                            <span>React</span> <span>Node.js</span> <span>AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-card">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 data-en="Full Stack Developer" data-ar="مطور واجهات أمامية وخلفية">Full Stack Developer</h3>
+                            <span class="timeline-date">2018 - 2021</span>
+                        </div>
+                        <h4 class="company" data-en="Creative Digital Agency" data-ar="وكالة الإبداع الرقمي">Creative Digital Agency</h4>
+                        <p data-en="Developed and maintained dynamic web applications for diverse clients. Collaborated closely with UI/UX designers to translate pixel-perfect designs into functional code." data-ar="طورت وصيانت تطبيقات ويب ديناميكية لعملاء متنوعين. تعاونت عن كثب مع مصممي واجهة المستخدم لتجربة المستخدم لترجمة التصميمات المثالية إلى كود وظيفي.">Developed and maintained dynamic web applications for diverse clients. Collaborated closely with UI/UX designers to translate pixel-perfect designs into functional code.</p>
+                        <div class="tech-stack">
+                            <span>Vue.js</span> <span>Python</span> <span>Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="section-container fade-in-up">
+            <h2 class="section-title" data-en="Featured <span>Projects</span>" data-ar="أبرز <span>المشاريع</span>">Featured <span>Projects</span></h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card glass-card">
+                    <div class="mobile-mockup">
+                        <div class="notch"></div>
+                        <div class="screen">
+                            <img src="assets/images/app1.jpg" alt="App 1" onerror="this.src='https://via.placeholder.com/300x600/121212/6366f1?text=App+1+Screenshot'">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-en="MediNear App" data-ar="تطبيق MediNear">MediNear App</h3>
+                        <p data-en="A comprehensive pharmacy and medicine delivery application allowing users to search for medications, find nearby pharmacies, and order with ease." data-ar="تطبيق شامل للصيدليات وتوصيل الأدوية يتيح للمستخدمين البحث عن الأدوية، والعثور على الصيدليات القريبة، والطلب بسهولة.">A comprehensive pharmacy and medicine delivery application allowing users to search for medications, find nearby pharmacies, and order with ease.</p>
+                        <div class="tech-stack">
+                            <span>Flutter</span> <span>Firebase</span> <span>Google Maps</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="assets/downloads/app-release.apk" download class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;"><i class="fas fa-download"></i> <span data-en="Download APK" data-ar="تحميل التطبيق">Download APK</span></a>
+                            <a href="#" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;"><i class="fab fa-github"></i> <span data-en="Source" data-ar="الكود">Source</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-card">
+                    <div class="mobile-mockup">
+                        <div class="notch"></div>
+                        <div class="screen">
+                            <img src="assets/images/app2.jpg" alt="FitCoach App" onerror="this.src='https://via.placeholder.com/300x600/121212/ff8a00?text=Fitness+App'">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-en="FitCoach Fitness App" data-ar="تطبيق FitCoach للياقة">FitCoach Fitness App</h3>
+                        <p data-en="A comprehensive health and fitness tracking application featuring daily step/water goals, personalized exercise guides, and an AI coach assistant." data-ar="تطبيق شامل لتتبع الصحة واللياقة البدنية يتميز بأهداف يومية للخطوات والمياه، وأدلة تمارين مخصصة، ومساعد مدرب ذكي.">A comprehensive health and fitness tracking application featuring daily step/water goals, personalized exercise guides, and an AI coach assistant.</p>
+                        <div class="tech-stack">
+                            <span>React Native</span> <span>Redux</span> <span>Node.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;" data-en="Live Demo" data-ar="معاينة حية">Live Demo</a>
+                            <a href="#" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;"><i class="fab fa-github"></i> <span data-en="Source" data-ar="الكود">Source</span></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section alt-bg">
+        <div class="section-container fade-in-up">
+            <h2 class="section-title" data-en="Education" data-ar="التعليم">Education</h2>
+            <div class="education-grid">
+                <div class="education-card glass-card">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3 data-en="Master of Computer Science" data-ar="ماجستير في علوم الحاسب">Master of Computer Science</h3>
+                    <h4 class="university" data-en="Global Tech University" data-ar="جامعة التكنولوجيا العالمية">Global Tech University</h4>
+                    <span class="edu-date">2016 - 2018</span>
+                    <p data-en="Specialized in Artificial Intelligence and Machine Learning. Graduated with Honors." data-ar="تخصصت في الذكاء الاصطناعي وتعلم الآلة. تخرجت بمرتبة الشرف.">Specialized in Artificial Intelligence and Machine Learning. Graduated with Honors.</p>
+                </div>
+                
+                <div class="education-card glass-card">
+                    <div class="edu-icon"><i class="fas fa-university"></i></div>
+                    <h3 data-en="Bachelor of Engineering" data-ar="بكالوريوس هندسة">Bachelor of Engineering</h3>
+                    <h4 class="university" data-en="State University" data-ar="جامعة الدولة">State University</h4>
+                    <span class="edu-date">2012 - 2016</span>
+                    <p data-en="Major in Software Engineering. Led the university coding club and won 2 national hackathons." data-ar="تخصصت في هندسة البرمجيات. قدت نادي البرمجة بالجامعة وفزت بمسابقتين وطنيتين للهاكاثون.">Major in Software Engineering. Led the university coding club and won 2 national hackathons.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="section-container fade-in-up">
+            <h2 class="section-title" data-en="Core <span>Skills</span>" data-ar="المهارات <span>الأساسية</span>">Core <span>Skills</span></h2>
+            
+            <div class="skills-wrapper">
+                <div class="skill-category glass-card">
+                    <h3 data-en="Mobile Frameworks" data-ar="أطر عمل الهواتف">Mobile Frameworks</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Flutter / Dart</span> <span>98%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 98%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>React Native / JS</span> <span>95%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Swift / Kotlin</span> <span>90%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category glass-card">
+                    <h3 data-en="Tools & Backend" data-ar="الأدوات والخوادم">Tools & Backend</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Firebase / Supabase</span> <span>95%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>UI/UX & Figma</span> <span>90%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Git & CI/CD</span> <span>85%</span></div>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section alt-bg">
+        <div class="section-container fade-in-up text-center">
+            <h2 class="section-title" data-en="Get In <span>Touch</span>" data-ar="تواصل <span>معي</span>">Get In <span>Touch</span></h2>
+            <p class="contact-text" data-en="I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!" data-ar="أنا أبحث حاليًا عن فرص جديدة. سواء كان لديك سؤال أو تريد فقط أن تلقي التحية، سأبذل قصارى جهدي للرد عليك!">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+            <a href="mailto:hello@example.com" class="btn-primary contact-btn"><span data-en="Say Hello" data-ar="أرسل رسالة">Say Hello</span> <i class="fas fa-paper-plane"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p data-en="&copy; 2026 Ahmed M. ElDardery. Built with ❤️ and Modern Web Tech." data-ar="&copy; 2026 أحمد الدرديري. صُنع بحب باستخدام تقنيات الويب الحديثة.">&copy; 2026 Ahmed M. ElDardery. Built with ❤️ and Modern Web Tech.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
