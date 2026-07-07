@@ -115,21 +115,23 @@ html[dir="rtl"] .logo {
 
 .loader-name {
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: clamp(1.4rem, 6vw, 2.5rem);
     font-weight: 700;
     color: var(--text-primary);
     letter-spacing: 2px;
     display: flex;
     align-items: center;
-    height: 3.5rem;
+    justify-content: center;
+    height: auto;
+    white-space: nowrap;
 }
 
 .typewriter-cursor {
     display: inline-block;
     width: 3px;
-    height: 2rem;
+    height: clamp(1.2rem, 5vw, 2rem);
     background-color: var(--accent-primary);
-    margin-left: 8px;
+    margin-left: 6px;
     animation: blink 1s infinite;
 }
 
@@ -140,6 +142,7 @@ html[dir="rtl"] .logo {
 
 .loader-progress {
     width: 250px;
+    max-width: 80vw;
     height: 2px;
     background: var(--glass-border);
     position: relative;
