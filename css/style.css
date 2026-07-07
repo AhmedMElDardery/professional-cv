@@ -1488,6 +1488,30 @@ footer p {
     .btn-nav {
         display: none;
     }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-actions {
+        gap: 0.3rem;
+    }
+
+    .btn-lang {
+        margin: 0 0.2rem;
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .btn-icon, .menu-toggle {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .hero-section {
+        padding-top: 8rem;
+    }
     
     .section {
         padding: 4rem 1.5rem;
@@ -1504,15 +1528,20 @@ footer p {
     }
     
     .hero-actions, html[dir="rtl"] .hero-actions {
-        justify-content: center;
-        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
         gap: 1rem;
     }
     
     .hero-actions .btn-primary, .hero-actions .btn-secondary {
         width: 100%;
-        max-width: 280px;
+        max-width: none;
+        display: flex;
         justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
     }
 
     .social-links {
@@ -1569,7 +1598,9 @@ footer p {
     }
 
     .glitch-text {
-        font-size: 2.2rem;
+        font-size: clamp(1.6rem, 8vw, 2.2rem);
+        white-space: normal;
+        word-break: keep-all;
     }
     
     .role {
