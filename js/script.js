@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .fromTo('.hero-image', 
                 { scale: 0.8, opacity: 0, rotation: -5 }, 
                 { scale: 1, opacity: 1, rotation: 0, duration: 0.8, ease: "back.out(1.5)" }, 
-                "-=0.5"
+                0
             )
             .fromTo('.floating-badge', 
                 { scale: 0, opacity: 0 }, 
@@ -296,6 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Navbar Scroll Effect & Mobile Menu ---
     const navbar = document.getElementById('navbar');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
     const navLinksContainer = document.querySelector('.nav-links');
     
     if (mobileMenuBtn && navLinksContainer) {
@@ -303,6 +304,13 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinksContainer.classList.toggle('active');
             playClickSound();
         });
+
+        if (closeMenuBtn) {
+            closeMenuBtn.addEventListener('click', () => {
+                navLinksContainer.classList.remove('active');
+                playClickSound();
+            });
+        }
 
         // Close mobile menu when a link is clicked
         navLinksContainer.querySelectorAll('a').forEach(link => {
