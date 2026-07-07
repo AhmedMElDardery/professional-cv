@@ -16,6 +16,8 @@
 </head>
 <body>
     
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
     <!-- Custom Cursor -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
@@ -35,7 +37,7 @@
             <div class="nav-actions">
                 <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
                 <button id="lang-toggle" class="btn-secondary btn-lang">عربي</button>
-                <a href="#contact" class="btn-primary btn-nav" data-en="Let's Talk" data-ar="تواصل معي">Let's Talk</a>
+                <a href="#contact" class="btn-primary btn-nav open-contact-modal" data-en="Let's Talk" data-ar="تواصل معي">Let's Talk</a>
             </div>
         </div>
     </nav>
@@ -49,7 +51,9 @@
             <div class="hero-content fade-in">
                 <p class="greeting" data-en="Hello, I'm" data-ar="أهلاً بك، أنا">Hello, I'm</p>
                 <h1 class="glitch-text" data-text="Ahmed M. ElDardery">Ahmed M. ElDardery</h1>
-                <h2 class="role" data-en="Mobile Application Developer" data-ar="مطور تطبيقات هواتف">Mobile Application Developer</h2>
+                <h2 class="role">
+                    <span class="typed-text"></span><span class="typed-cursor">&nbsp;</span>
+                </h2>
                 <p class="bio-short" data-en="I build exceptional digital experiences that are fast, accessible, and visually stunning." data-ar="أقوم ببناء تجارب رقمية استثنائية، سريعة، وسهلة الاستخدام وذات تصميم مذهل.">I build exceptional digital experiences that are fast, accessible, and visually stunning.</p>
                 <div class="hero-actions">
                     <a href="#experience" class="btn-primary" data-en="View My Work" data-ar="شاهد أعمالي">View My Work</a>
@@ -159,7 +163,7 @@
                     <div class="mobile-mockup">
                         <div class="notch"></div>
                         <div class="screen">
-                            <img src="assets/images/app1.jpg" alt="App 1" onerror="this.src='https://via.placeholder.com/300x600/121212/6366f1?text=App+1+Screenshot'">
+                            <img src="assets/images/app1.jpg" alt="App 1" class="lightbox-target" onerror="this.src='https://via.placeholder.com/300x600/121212/6366f1?text=App+1+Screenshot'" style="cursor: zoom-in;">
                         </div>
                     </div>
                     <div class="project-content">
@@ -180,7 +184,7 @@
                     <div class="mobile-mockup">
                         <div class="notch"></div>
                         <div class="screen">
-                            <img src="assets/images/app2.jpg" alt="FitCoach App" onerror="this.src='https://via.placeholder.com/300x600/121212/ff8a00?text=Fitness+App'">
+                            <img src="assets/images/app2.jpg" alt="FitCoach App" class="lightbox-target" onerror="this.src='https://via.placeholder.com/300x600/121212/ff8a00?text=Fitness+App'" style="cursor: zoom-in;">
                         </div>
                     </div>
                     <div class="project-content">
@@ -196,6 +200,55 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section alt-bg">
+        <div class="section-container fade-in-up">
+            <h2 class="section-title" data-en="Client <span>Testimonials</span>" data-ar="آراء <span>العملاء</span>">Client <span>Testimonials</span></h2>
+            <div class="testimonial-carousel">
+                <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide glass-card">
+                            <div class="testimonial-content">
+                                <i class="fas fa-quote-left quote-icon"></i>
+                                <p data-en="Ahmed is a phenomenal developer. He delivered our app ahead of schedule and the quality was outstanding." data-ar="أحمد مطور استثنائي. قام بتسليم تطبيقنا قبل الموعد المحدد وكانت الجودة مذهلة.">Ahmed is a phenomenal developer. He delivered our app ahead of schedule and the quality was outstanding.</p>
+                                <h4 data-en="John Doe" data-ar="جون دو">John Doe</h4>
+                                <span data-en="CEO, TechCorp" data-ar="المدير التنفيذي, TechCorp">CEO, TechCorp</span>
+                            </div>
+                        </li>
+                        <li class="carousel-slide glass-card">
+                            <div class="testimonial-content">
+                                <i class="fas fa-quote-left quote-icon"></i>
+                                <p data-en="Great attention to detail and amazing problem-solving skills. Highly recommend working with him." data-ar="اهتمام كبير بالتفاصيل ومهارات مذهلة في حل المشكلات. أوصي بشدة بالعمل معه.">Great attention to detail and amazing problem-solving skills. Highly recommend working with him.</p>
+                                <h4 data-en="Sarah Smith" data-ar="سارة سميث">Sarah Smith</h4>
+                                <span data-en="Product Manager" data-ar="مدير منتج">Product Manager</span>
+                            </div>
+                        </li>
+                        <li class="carousel-slide glass-card">
+                            <div class="testimonial-content">
+                                <i class="fas fa-quote-left quote-icon"></i>
+                                <p data-en="The user experience of the mobile app he built for us is simply perfect. Our users love it." data-ar="تجربة المستخدم لتطبيق الهاتف الذي بناه لنا مثالية ببساطة. مستخدمونا يحبونه.">The user experience of the mobile app he built for us is simply perfect. Our users love it.</p>
+                                <h4 data-en="Mike Johnson" data-ar="مايك جونسون">Mike Johnson</h4>
+                                <span data-en="Founder, StartupX" data-ar="مؤسس, StartupX">Founder, StartupX</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Activity Section -->
+    <section id="github-activity" class="section">
+        <div class="section-container fade-in-up">
+            <h2 class="section-title" data-en="Open Source <span>Contributions</span>" data-ar="مساهمات <span>مفتوحة المصدر</span>">Open Source <span>Contributions</span></h2>
+            <div id="github-repos" class="github-grid">
+                <p class="text-center" data-en="Loading repositories..." data-ar="جاري تحميل المستودعات...">Loading repositories...</p>
             </div>
         </div>
     </section>
@@ -274,7 +327,7 @@
         <div class="section-container fade-in-up text-center">
             <h2 class="section-title" data-en="Get In <span>Touch</span>" data-ar="تواصل <span>معي</span>">Get In <span>Touch</span></h2>
             <p class="contact-text" data-en="I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!" data-ar="أنا أبحث حاليًا عن فرص جديدة. سواء كان لديك سؤال أو تريد فقط أن تلقي التحية، سأبذل قصارى جهدي للرد عليك!">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-            <a href="mailto:hello@example.com" class="btn-primary contact-btn"><span data-en="Say Hello" data-ar="أرسل رسالة">Say Hello</span> <i class="fas fa-paper-plane"></i></a>
+            <a href="#" class="btn-primary contact-btn open-contact-modal"><span data-en="Say Hello" data-ar="أرسل رسالة">Say Hello</span> <i class="fas fa-paper-plane"></i></a>
         </div>
     </section>
 
@@ -289,6 +342,35 @@
             <p data-en="&copy; 2026 Ahmed M. ElDardery. Built with ❤️ and Modern Web Tech." data-ar="&copy; 2026 أحمد الدرديري. صُنع بحب باستخدام تقنيات الويب الحديثة.">&copy; 2026 Ahmed M. ElDardery. Built with ❤️ and Modern Web Tech.</p>
         </div>
     </footer>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="modal-overlay">
+        <div class="modal-content glass-card">
+            <button class="close-modal">&times;</button>
+            <h3 data-en="Send a Message" data-ar="أرسل رسالة" style="margin-bottom: 1.5rem; text-align: center;">Send a Message</h3>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label data-en="Name" data-ar="الاسم">Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label data-en="Message" data-ar="الرسالة">Message</label>
+                    <textarea rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;"><span data-en="Send" data-ar="إرسال">Send</span> <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="modal-overlay">
+        <span class="close-modal close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="Lightbox Image">
+    </div>
 
     <!-- Custom JS -->
     <script src="js/script.js"></script>

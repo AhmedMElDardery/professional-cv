@@ -42,6 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Change button text
         langToggleBtn.innerText = currentLang === 'en' ? 'عربي' : 'English';
 
+        // Update Typing Effect strings
+        currentTextArray = currentLang === 'ar' ? textArrayAr : textArray;
+        clearTimeout(typeTimeout);
+        isDeleting = false;
+        charIndex = 0;
+        textArrayIndex = 0;
+        if(document.querySelector('.typed-text')) document.querySelector('.typed-text').textContent = '';
+        setTimeout(type, 500);
+
         // Translate all elements with data-en and data-ar
         const translatableElements = document.querySelectorAll('[data-en][data-ar]');
         translatableElements.forEach(el => {
@@ -86,6 +95,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- Scroll Progress Bar ---
+    const scrollProgress = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progressHeight = (window.scrollY / totalHeight) * 100;
+        if (scrollProgress) {
+            scrollProgress.style.width = `${progressHeight}%`;
+        }
+    });
+
     // --- Intersection Observer for Fade-in Animations ---
     const observerOptions = {
         root: null,
@@ -103,6 +122,98 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fadeElements = document.querySelectorAll('.fade-in-up');
     fadeElements.forEach(el => observer.observe(el));
+
+    // --- Typing Effect ---
+    const typedTextSpan = document.querySelector('.typed-text');
+    
+    let textArray = ['Mobile Application Developer', 'UI/UX Enthusiast', 'Software Engineer'];
+    let textArrayAr = ['مطور تطبيقات هواتف', 'مهتم بتجربة المستخدم', 'مهندس برمجيات'];
+    
+    let currentTextArray = currentLang === 'ar' ? textArrayAr : textArray;
+    let textArrayIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typeTimeout;
+
+    function type() {
+        if (!typedTextSpan) return;
+        
+        const currentText = currentTextArray[textArrayIndex];
+        
+        if (isDeleting) {
+            typedTextSpan.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typedTextSpan.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let typeSpeed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && charIndex === currentText.length) {
+            typeSpeed = 2000; // Pause at end of word
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textArrayIndex++;
+            if (textArrayIndex >= currentTextArray.length) {
+                textArrayIndex = 0;
+            }
+            typeSpeed = 500; // Pause before typing next word
+        }
+
+        typeTimeout = setTimeout(type, typeSpeed);
+    }
+    
+    if (typedTextSpan) {
+        setTimeout(type, 1000);
+    }
+
+    // --- Contact Modal ---
+    const contactModal = document.getElementById('contact-modal');
+    const openModalBtns = document.querySelectorAll('.open-contact-modal');
+    const closeModalBtn = document.querySelector('.close-modal');
+    const contactForm = document.getElementById('contact-form');
+
+    if(contactModal) {
+        openModalBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                contactModal.classList.add('active');
+            });
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            contactModal.classList.remove('active');
+        });
+
+        contactModal.addEventListener('click', (e) => {
+            if (e.target === contactModal) {
+                contactModal.classList.remove('active');
+            }
+        });
+
+        if(contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = contactForm.querySelector('button');
+                const originalText = btn.innerHTML;
+                const lang = document.documentElement.lang;
+                btn.innerHTML = lang === 'ar' ? 'جاري الإرسال...' : 'Sending...';
+                
+                setTimeout(() => {
+                    btn.innerHTML = lang === 'ar' ? 'تم الإرسال بنجاح!' : 'Sent Successfully!';
+                    btn.style.background = '#3ddc84';
+                    setTimeout(() => {
+                        contactModal.classList.remove('active');
+                        contactForm.reset();
+                        btn.innerHTML = originalText;
+                        btn.style.background = '';
+                    }, 2000);
+                }, 1500);
+            });
+        }
+    }
 
     // --- Smooth Scrolling for Anchor Links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -140,6 +251,96 @@ document.addEventListener('DOMContentLoaded', () => {
     const skillsSection = document.getElementById('skills');
     if (skillsSection) {
         skillObserver.observe(skillsSection);
+    }
+
+    // --- Lightbox Gallery ---
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTargets = document.querySelectorAll('.lightbox-target');
+    const closeLightboxBtn = document.querySelector('.close-lightbox');
+
+    if(lightbox) {
+        lightboxTargets.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        closeLightboxBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+    }
+
+    // --- Testimonials Carousel ---
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track ? track.children : []);
+    const nextButton = document.querySelector('.next-btn');
+    const prevButton = document.querySelector('.prev-btn');
+
+    if(track && slides.length > 0) {
+        let currentIndex = 0;
+        
+        const updateSlidePosition = () => {
+            const direction = document.documentElement.dir === 'rtl' ? 1 : -1;
+            track.style.transform = `translateX(${currentIndex * 100 * direction}%)`;
+        };
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlidePosition();
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlidePosition();
+        });
+        
+        langToggleBtn.addEventListener('click', () => {
+            setTimeout(updateSlidePosition, 50);
+        });
+    }
+
+    // --- GitHub Integration ---
+    const githubReposContainer = document.getElementById('github-repos');
+    const githubUsername = 'github'; // User can change this later
+
+    if(githubReposContainer) {
+        fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=3`)
+            .then(response => response.json())
+            .then(data => {
+                githubReposContainer.innerHTML = '';
+                if(data.length === 0) {
+                    githubReposContainer.innerHTML = '<p class="text-center">No repositories found.</p>';
+                    return;
+                }
+                data.forEach(repo => {
+                    const repoCard = document.createElement('a');
+                    repoCard.href = repo.html_url;
+                    repoCard.target = '_blank';
+                    repoCard.className = 'repo-card glass-card';
+                    repoCard.innerHTML = `
+                        <h3><i class="fab fa-github"></i> ${repo.name}</h3>
+                        <p>${repo.description || 'No description available.'}</p>
+                        <div class="repo-stats">
+                            ${repo.language ? `<span><i class="fas fa-circle" style="color: var(--accent-primary); font-size: 0.6rem;"></i> ${repo.language}</span>` : ''}
+                            <span><i class="fas fa-star"></i> ${repo.stargazers_count}</span>
+                            <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
+                        </div>
+                    `;
+                    githubReposContainer.appendChild(repoCard);
+                });
+            })
+            .catch(error => {
+                githubReposContainer.innerHTML = '<p class="text-center" style="color: #ef4444;">Failed to load repositories.</p>';
+                console.error('Error fetching GitHub repos:', error);
+            });
     }
 
     // --- Particle Canvas Background ---
