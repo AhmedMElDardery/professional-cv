@@ -1,0 +1,21 @@
+{
+  "name": "Ahmed M. ElDardery CV",
+  "short_name": "Ahmed CV",
+  "description": "Professional CV of Ahmed M. ElDardery",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "assets/images/profile.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "assets/images/profile.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
